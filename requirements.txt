@@ -1,0 +1,6 @@
+sunlight
+numpy
+nltk
+Flask
+peewee
+pyyaml
