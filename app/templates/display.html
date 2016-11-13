@@ -134,7 +134,9 @@
 
 <script>
   $(document).ready(function() {
-     $('#bills').DataTable();
+    $('#bills').DataTable({
+      "pageLength": 12
+    });
 
 } );
 </script>
