@@ -7,4 +7,4 @@ pyyaml
 BeautifulSoup4
 google-api-python-client
 requests
-summy
+sumy

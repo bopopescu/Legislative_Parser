@@ -27,8 +27,32 @@ def list_bills():
 
 @app.route('/view/<bid>/', methods=["GET"])
 def view_bill(bid):
-    bill = Bill.select().where(Bill.id == bid).get()
+    bill = Bill.select().where(Bill.is_alive == "True").where(Bill.bID == bid).get()
     sections = get_sections(bill.link_web + '/text')
     summaries = get_summaries(bill.link_web + '/summary')
-    print bill.link_web
-    return render_template('display.html', bill=bill, sections=sections, summaries=summaries)
+    salient = Salient.select().where(Salient.ID_id == bill.ID)
+    count = salient.group_by(Salient.section).count()
+
+    colors = dict();
+
+    for section_count in range(count):
+        summaries_s = salient.select(Salient.name).where((Salient.section == section_count) & (Salient.summary == True))
+        sections_s = salient.select().where((Salient.section == section_count) & (Salient.summary == False))
+        names = list()
+
+        for section in summaries_s:
+            if section.name not in names:
+                names.append(section.name)
+
+        color_set = False
+        for section in sections_s:
+            if section.name in names:
+                colors[section_count] = "alert alert-success"
+                color_set = True
+
+        if not color_set:
+            colors[section_count] = "alert alert-warning"
+    for section_count in range(section_count):
+        if section_count not in colors:
+            colors = "alert alert-info"
+    return render_template('display.html', bill=bill, sections=sections, summaries=summaries, colors=colors,)
