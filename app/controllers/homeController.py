@@ -15,7 +15,7 @@ def home():
 @app.route('/list/', methods=["GET"])
 def list_bills():
     bills = Bill.select().where(Bill.is_alive == "True")
-    return render_template('homeView.html', bills=bills)
+    return render_template('list.html', bills=bills)
 
 @app.route('/view/<bid>/', methods=["GET"])
 def view_bill(bid):
