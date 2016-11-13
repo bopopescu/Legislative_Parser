@@ -38,3 +38,12 @@ class Bill(dbModel):
     link_web            = TextField()
     is_alive            = TextField()
     tweet_sum           = TextField()
+
+class Salient(dbModel):
+    pID                 = PrimaryKeyField()
+    ID                  = ForeignKeyField(Bill)
+    summary             = BooleanField()
+    name                = TextField()
+    score               = TextField()
+    obj_type            = TextField()
+    section             = IntegerField() 
