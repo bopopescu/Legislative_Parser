@@ -81,6 +81,7 @@
   <div class="col-xs-12">
     <br />
 		<h1 class="text-center col-xs-10 col-xs-offset-1"> {{bill.title}} </h1>
+		<h3 class="text-center col-xs-10 col-xs-offset-1"> {{prognosis}} </h3>
 			{% for section in sections %}
       <div class="row">
 				<div class="col-xs-12">
@@ -91,11 +92,10 @@
           {% if colors[section] is not defined %} 
           <p class="alert alert-info col-xs-10 col-xs-offset-1">{{sections[section]}}</p>
           {% endif %}
-
-
 				</div>
-		</div>
+  		</div>
 			{% endfor %}
+		</div>
 
 
 

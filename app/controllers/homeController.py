@@ -8,6 +8,7 @@ from app.logic.parse_sections import get_sections
 from app.logic.bill_scrapping import get_summaries
 from app.logic.summarize import summarize
 import random
+from app.logic.prognosis import get_prognosis
 
 
 from flask import render_template
@@ -51,4 +52,4 @@ def view_bill(bid):
 
         if not color_set:
                 colors[section_count] = "alert alert-warning"
-    return render_template('display.html', bill=bill, sections=sections, summaries=summaries, colors=colors,)
+    return render_template('display.html', bill=bill, sections=sections, summaries=summaries, colors=colors,prognosis=get_prognosis(bill.link_web))
