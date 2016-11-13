@@ -44,7 +44,7 @@
 	<nav class="fh5co-nav" role="navigation" style="background-image: url(/static/images/declaration.jpg);">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-666666-left">
+				<div class="col-xs-6-left">
 					<div id="fh5co-logo"><a href="../home/">Riders Block<span>.</span></a></div>
 				</div>
 			</div>
@@ -52,7 +52,7 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(/static/images/img_bg_1.jpg); max-height:15vh; background-position: 0px 0px;" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="color:black; max-height:15vh; background-position: 0px 0px;" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -88,13 +88,14 @@
             <tr>
           {% endif %}
             {% set counter = counter + 1%}
-						{% set title = bill.title.split(':') %}
+	    {%set title = bill.title.split(':') %}
               <td>
                 <div class="col-md-12 col-sm-12" data-animate-effect="fadeInUp" data-toggle="tooltip" title="{{title[1]}}">
                   <div class="fh5co-post">
                     <span class="fh5co-date">{{bill.current_status_date}}</span>
                     <h3><a href="/view/{{bill.id}}" >{{title[1] | truncate(30,true)}}</a></h3>
                     <p>{{ title[0] }}</p>
+                    <p>{{bill.tweet_sum | truncate(140)}}</p>
                   </div>
                 </div>
               </td>
@@ -111,37 +112,14 @@
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget ">
+				<div class="col-md-12 fh5co-widget ">
 					<h3>Riders Block.</h3>
 					<p>In an attempt to show both voters and members of Congress whether any Bills that are up for vote have any anomalies within them. Any additional text added to a bill that has little to no connection to the bill as a whole is known as a rider.</p>
 					<p><a href="https://en.wikipedia.org/wiki/Rider_(legislation)" target="blank">Learn More</a></p>
 				</div>
 			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
-	</div>
-
-	<div class="gototop /static/js-top">
-		<a href="#" class="/static/js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
+                </div>
+        </footer>
 
 	<!-- jQuery -->
 	<script src="/static/js/jquery.min.js"></script>

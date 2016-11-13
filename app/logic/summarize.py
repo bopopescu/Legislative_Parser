@@ -24,8 +24,11 @@ def summarize(url):
     out = ""
 
     for sentence in summarizer(parser.document, SENTENCES_COUNT):
-        out += str(sentence) + "\n"
+        try:
+            out += str(sentence) + "\n"
+        except:
+            pass
 
     return out
 
-print (summarize("https://www.govtrack.us/congress/bills/114/hr1634/text"))
+#print (summarize("https://www.govtrack.us/congress/bills/114/hr1634/text"))
