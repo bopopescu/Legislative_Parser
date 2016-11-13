@@ -27,7 +27,7 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com//static/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	
+
 	<!-- Animate./static/css -->
 	<link rel="stylesheet" href="/static/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -50,9 +50,9 @@
 
 	</head>
 	<body>
-		
+
 	<div class="fh5co-loader"></div>
-	
+
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
@@ -66,7 +66,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 		</div>
 	</nav>
 
@@ -76,12 +76,22 @@
 			<div class="row">
 			</div>
 		</div>
-	</header> 
+	</header>
 
   <div class="col-xs-12">
-    <div class="col-xs-12">
-      <br />
-    </div>
+
+			{% for section in sections %}
+			<div class="row">
+				<div class="col-xs-6">
+					<h2>Section {{section}}</h2>
+					<p>{{sections[section]}}</p>
+				</div>
+				<div class="col-xs-6">
+					{{summaries[section]}}
+				</div>
+		</div>
+			{% endfor %}
+
     <h1 class="text-center col-xs-10 col-xs-offset-1"> {{bill.title}} </h1>
     <p class="alert alert-danger col-xs-10 col-xs-offset-1">DJDJDKJFLSJDKFJKLSDJFLKJSKLDFJKLSJDLKFJSLKDJFLKJSDLKFJLSKDJFKLSJDLKFJLSKDJFLSD
       FJSLKDFJLKSJDFLKJSD
@@ -92,10 +102,10 @@
       FJSLDKFJLSKDJFLKSJDF
       SJDLFJSDLKFJS
       DFLKJLKJDFS
-    </p>" 
+    </p>"
   </div>
 
-	
+
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
@@ -138,7 +148,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
 						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
 					</p>
 					<p>
@@ -159,7 +169,7 @@
 	<div class="gototop /static/js-top">
 		<a href="#" class="/static/js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+
 	<!-- jQuery -->
 	<script src="/static/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -178,16 +188,15 @@
 	<!-- Main -->
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css"/>
- 
+
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js"></script><script src="/static/js/main.js"></script>
 
 <script>
   $(document).ready(function() {
      $('#bills').DataTable();
-    
+
 } );
 </script>
 
 	</body>
 </html>
-
