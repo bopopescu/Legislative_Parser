@@ -1,5 +1,5 @@
 
-# The log file location   
+# The log file location
 log:
 filename: "LedgeSparks.log"
 
@@ -12,4 +12,4 @@ databases:
 models:
   mainDB:
     - Bill
-    - Salience
+    - Salient

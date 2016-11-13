@@ -2,8 +2,27 @@ import os, sys
 import importlib
 import datetime
 import urllib, json
+from bs4 import BeautifulSoup
 
 from app.models import *
+
+def get_tweet(url):
+    r = urllib.urlopen(url)
+    soup = BeautifulSoup(r, 'html.parser')
+    full_sum = soup.find("div", {"id": "libraryofcongress"})
+    [s.extract() for s in full_sum('script')]
+    count = 0
+    result = []
+    length = len(soup.find_all('p'))-20
+    for p in (soup.find_all('p')):
+        if count >= 7 and count <= length: 
+            result.append(p.get_text())
+        count += 1
+    tweet =  "".join(result)[0:140]
+    if tweet == "":
+        tweet = "N/A"
+    return tweet
+
 conf = load_config(os.path.join(here, 'config.yaml'))
 
 sqlite_dbs = [conf['databases']['dev']]
@@ -50,5 +69,9 @@ for x in data['objects']:
              current_status      = x['current_status'],
              current_status_date = x['current_status_date'],
              link_web            = x['link'],
-             is_alive            = x['is_alive']).save()
+             is_alive            = x['is_alive'],
+             tweet_sum           = get_tweet(x['link']+"/summary")).save()
+        #TODO 
+        #PUT THE PARSING CODE HERE
         print("Added the Bill " +x['link'])
+
