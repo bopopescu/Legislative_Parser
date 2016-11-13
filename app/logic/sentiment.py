@@ -7,7 +7,7 @@ from oauth2client.client import GoogleCredentials
 DISCOVERY_URL = ('https://{api}.googleapis.com/'
                  '$discovery/rest?version={apiVersion}')
 
-def main():
+def main(input_text):
   '''Run a sentiment analysis request on text within a passed filename'''
 
   http = httplib2.Http()
@@ -25,7 +25,7 @@ def main():
     body={
       'document': {
          'type': 'PLAIN_TEXT',
-         'content': "Kye is a stupid motherfucker. Kye should feel ashamed of himself. Nobody should like Kye or Jesson. Jesson is also stupid. Stupid is as stupid does.",
+         'content': input_text,
       }
     })
 
@@ -35,9 +35,9 @@ def main():
   #print('Sentiment: polarity of %s with magnitude of %s' % (polarity, magnitude))
   return response
 
-def callChain():
+def callChain(input_text):
   #parser = argparse.ArgumentParser()
   #parser.add_argument(
 #    'movie_review_file', help='The filename of the movie review you\'d like to analyze.')
   #args = parser.parse_args()
-  return main()
+  return main(input_text)

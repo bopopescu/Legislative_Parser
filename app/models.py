@@ -37,3 +37,4 @@ class Bill(dbModel):
     current_status_date = TextField()
     link_web            = TextField()
     is_alive            = TextField()
+    tweet_sum           = TextField()
