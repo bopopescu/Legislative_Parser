@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
 import urllib
 
-def get_sections():
+def get_sections(bill_url):
     """Returns each summary in dictionary with the values in keys"""
-    r = urllib.urlopen('http://www.govtrack.us/congress/bills/114/s1864/text')
+    r = urllib.urlopen(bill_url)
     soup = BeautifulSoup(r, 'html.parser')
 
     bill = soup.find("div", {"id": "main_text_content"})
@@ -18,4 +18,4 @@ def get_sections():
 
     return data
 
-get_sections()
+get_sections('http://www.govtrack.us/congress/bills/114/s1864/text')
