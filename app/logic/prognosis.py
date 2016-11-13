@@ -10,6 +10,6 @@ def get_prognosis(bill_url):
     prog = prog.find("div", {"class": "modal-body"})
 
 
-    return prog
+    return prog.find("p").get_text()
 
 print get_prognosis("https://www.govtrack.us/congress/bills/114/hr1634")
