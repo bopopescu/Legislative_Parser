@@ -18,4 +18,4 @@ def get_sections(bill_url):
 
     return data
 
-get_sections('http://www.govtrack.us/congress/bills/114/s1864/text')
+print get_sections('http://www.govtrack.us/congress/bills/114/s1864/text')
