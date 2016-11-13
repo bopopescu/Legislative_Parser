@@ -42,8 +42,8 @@ class Bill(dbModel):
 class Salience(dbModel):
     pID                 = PrimaryKeyField()
     ID                  = ForeignKeyField(Bill)
-    summary             = BooleanKeyField()
+    summary             = BooleanField()
     name                = TextField()
     score               = FloatField()
-    type                = TextFied()
+    type                = TextField()
     section             = IntegerField()
