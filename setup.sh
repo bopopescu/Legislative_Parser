@@ -13,4 +13,10 @@ fi
 pip install Flask
 pip install peewee
 pip install pyyaml
+
+
+export GOOGLE_APPLICATION_CREDENTIALS="app/static/key/LegislativeParser-baac0b58c29c.json"
+./app/static/google-cloud-sdk/install.sh
+
 pip install BeautifulSoup4
+

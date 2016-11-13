@@ -1,0 +1,79 @@
+
+.TH "GCLOUD_COMPUTE_INSTANCE\-GROUPS_MANAGED_SET\-INSTANCE\-TEMPLATE" 1
+
+
+
+.SH "NAME"
+.HP
+gcloud compute instance\-groups managed set\-instance\-template \- set instance template for managed instance group
+
+
+
+.SH "SYNOPSIS"
+.HP
+\f5gcloud compute instance\-groups managed set\-instance\-template\fR \fINAME\fR \fB\-\-template\fR=\fITEMPLATE\fR [\fB\-\-region\fR=\fIREGION\fR\ |\ \fB\-\-zone\fR=\fIZONE\fR] [\fIGLOBAL\-FLAG\ ...\fR]
+
+
+
+.SH "DESCRIPTION"
+
+\fBgcloud compute instance\-groups managed set\-instance\-template\fR updates
+the instance template for an existing managed instance group.
+
+The new template won't apply to existing instances in the group unless they are
+recreated using the recreate\-instances command. But the new template does apply
+to all new instances added to the managed instance group.
+
+
+
+.SH "POSITIONAL ARGUMENTS"
+
+\fINAME\fR
+.RS 2m
+The name of the managed instance group.
+
+
+.RE
+
+.SH "REQUIRED FLAGS"
+
+\fB\-\-template\fR=\fITEMPLATE\fR
+.RS 2m
+Compute Engine instance template resource to be used.
+
+
+.RE
+
+.SH "OPTIONAL FLAGS"
+
+At most one of these may be specified:
+
+\fB\-\-region\fR=\fIREGION\fR
+.RS 2m
+The region of the managed instance group to operate on. If not specified, you
+will be prompted to select a region.
+
+A list of regions can be fetched by running:
+
+.RS 2m
+$ gcloud compute regions list
+.RE
+
+.RE
+\fB\-\-zone\fR=\fIZONE\fR
+.RS 2m
+The zone of the managed instance group to operate on. If not specified, you will
+be prompted to select a zone.
+
+A list of zones can be fetched by running:
+
+.RS 2m
+$ gcloud compute zones list
+.RE
+
+
+.RE
+
+.SH "GLOBAL FLAGS"
+
+Run \fB$ gcloud help\fR for a description of flags available to all commands.

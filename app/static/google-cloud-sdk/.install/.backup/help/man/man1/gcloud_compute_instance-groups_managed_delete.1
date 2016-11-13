@@ -1,0 +1,66 @@
+
+.TH "GCLOUD_COMPUTE_INSTANCE\-GROUPS_MANAGED_DELETE" 1
+
+
+
+.SH "NAME"
+.HP
+gcloud compute instance\-groups managed delete \- delete Google Compute Engine managed instance groups
+
+
+
+.SH "SYNOPSIS"
+.HP
+\f5gcloud compute instance\-groups managed delete\fR \fINAMES\fR [\fINAMES\fR\ ...] [\fB\-\-region\fR=\fIREGION\fR\ |\ \fB\-\-zone\fR=\fIZONE\fR] [\fIGLOBAL\-FLAG\ ...\fR]
+
+
+
+.SH "DESCRIPTION"
+
+\fBgcloud compute instance\-groups managed delete\fR deletes one or more Google
+Compute Engine managed instance groups.
+
+
+
+.SH "POSITIONAL ARGUMENTS"
+
+\fINAMES\fR [\fINAMES\fR ...]
+.RS 2m
+The names of the managed instance groups.
+
+
+.RE
+
+.SH "FLAGS"
+
+At most one of these may be specified:
+
+\fB\-\-region\fR=\fIREGION\fR
+.RS 2m
+The region of the managed instance group to operate on. If not specified, you
+will be prompted to select a region.
+
+A list of regions can be fetched by running:
+
+.RS 2m
+$ gcloud compute regions list
+.RE
+
+.RE
+\fB\-\-zone\fR=\fIZONE\fR
+.RS 2m
+The zone of the managed instance group to operate on. If not specified, you will
+be prompted to select a zone.
+
+A list of zones can be fetched by running:
+
+.RS 2m
+$ gcloud compute zones list
+.RE
+
+
+.RE
+
+.SH "GLOBAL FLAGS"
+
+Run \fB$ gcloud help\fR for a description of flags available to all commands.
