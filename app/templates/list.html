@@ -14,6 +14,7 @@
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, /static/css3, mobile first, responsive" />
 	<meta name="author" content="gettemplates.co" />
 
+
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -32,7 +33,7 @@
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="/static/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/launch_css/bootstrap.css">
 
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="/static/css/magnific-popup.css">
@@ -99,22 +100,22 @@
           </tr>
         </thead>
         <tbody>
-        {% set count = 0 %}
+        {% set counter = 0 %}
         {% for bill in bills %}
-          {% if count is divisibleby (3) %}      
+          {% if counter % 3 == 0 %}
             <tr>
           {% endif %}
-           {% set count = count + 1 %}
+            {% set counter = counter + 1%}
               <td>
-                <div class="col-md-12 col-sm-12 animate-box" data-animate-effect="fadeInUp">
+                <div class="col-md-12 col-sm-12" data-animate-effect="fadeInUp">
                   <div class="fh5co-post">
                     <span class="fh5co-date">{{bill.current_status_date}}</span>
                     <h3><a href="#">{{bill.title | truncate(30,true)}}</a></h3>
-                    <p> "SUMMARY"</p>
+                    <p>  "DDD"</p>
                   </div>
                 </div>
               </td>
-          {% if count is divisibleby (3) %}      
+          {% if counter % 3 == 0 %}
             </tr>
           {% endif %}
         {% endfor %}
@@ -211,7 +212,8 @@
 
 <script>
   $(document).ready(function() {
-    $('#bills').DataTable();
+     $('#bills').DataTable();
+    
 } );
 </script>
 
