@@ -12,4 +12,4 @@ def get_prognosis(bill_url):
 
     return prog.find("p").get_text()
 
-print get_prognosis("https://www.govtrack.us/congress/bills/114/hr1634")
+#print get_prognosis("https://www.govtrack.us/congress/bills/114/hr1634")
