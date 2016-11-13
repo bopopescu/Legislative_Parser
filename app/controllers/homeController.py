@@ -7,8 +7,8 @@ from app.logic.sentiment import callChain
 from app.logic.parse_sections import get_sections
 from app.logic.bill_scrapping import get_summaries
 from app.logic.summarize import summarize
+import random
 from app.logic.prognosis import get_prognosis
-
 
 
 from flask import render_template
@@ -17,8 +17,6 @@ from flask import render_template
 def home():
     master = Bill.select().join(Salient, on=(Bill.ID == Salient.ID_id))
     ##Kye left off here after making the join statement
-    for i in master:
-        print i
     bills = Bill.select().where(Bill.is_alive == "True")
     return render_template('homeView.html', numbills = len(bills), master = master)
 
@@ -53,15 +51,5 @@ def view_bill(bid):
                 color_set = True
 
         if not color_set:
-            colors[section_count] = "alert alert-warning"
-    for section_count in range(section_count):
-        if section_count not in colors:
-            colors = "alert alert-info"
-    return render_template(
-        'display.html',
-        bill=bill,
-        sections=sections,
-        summaries=summaries,
-        colors=colors,
-        prognosis=get_prognosis(bill.link_web)
-    )
+                colors[section_count] = "alert alert-warning"
+    return render_template('display.html', bill=bill, sections=sections, summaries=summaries, colors=colors,prognosis=get_prognosis(bill.link_web))
