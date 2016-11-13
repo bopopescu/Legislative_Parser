@@ -27,7 +27,7 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com//static/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	
+
 	<!-- Animate./static/css -->
 	<link rel="stylesheet" href="/static/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -50,9 +50,9 @@
 
 	</head>
 	<body>
-		
+
 	<div class="fh5co-loader"></div>
-	
+
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
@@ -66,7 +66,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 		</div>
 	</nav>
 
@@ -79,7 +79,7 @@
 	</header>
 
 
-	
+
 
 	<div id="fh5co-blog" class="fh5co-bg-section">
 		<div class="container">
@@ -106,12 +106,13 @@
             <tr>
           {% endif %}
             {% set counter = counter + 1%}
+						{% set title = bill.title.split(':') %}
               <td>
-                <div class="col-md-12 col-sm-12" data-animate-effect="fadeInUp">
+                <div class="col-md-12 col-sm-12" data-animate-effect="fadeInUp" data-toggle="tooltip" title="{{title[1]}}">
                   <div class="fh5co-post">
                     <span class="fh5co-date">{{bill.current_status_date}}</span>
-                    <h3><a href="#">{{bill.title | truncate(30,true)}}</a></h3>
-                    <p>  "DDD"</p>
+                    <h3><a href="#" >{{title[1] | truncate(30,true)}}</a></h3>
+                    <p>{{ title[0] }}</p>
                   </div>
                 </div>
               </td>
@@ -121,10 +122,10 @@
         {% endfor %}
         </tbody>
       </table>
-      
 
 
-	
+
+
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
@@ -167,7 +168,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
 						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
 					</p>
 					<p>
@@ -188,7 +189,7 @@
 	<div class="gototop /static/js-top">
 		<a href="#" class="/static/js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+
 	<!-- jQuery -->
 	<script src="/static/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -207,16 +208,18 @@
 	<!-- Main -->
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css"/>
- 
+
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js"></script><script src="/static/js/main.js"></script>
 
 <script>
   $(document).ready(function() {
      $('#bills').DataTable();
-    
+
 } );
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
 </script>
 
 	</body>
 </html>
-
