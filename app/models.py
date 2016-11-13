@@ -28,6 +28,7 @@ For more information look at peewee documentation
 
 class Bill(dbModel):
     bID                 = PrimaryKeyField()
+    id                  = TextField(unique=True)
     title               = TextField()
     display_num         = TextField()
     bill_type           = TextField()
@@ -37,3 +38,12 @@ class Bill(dbModel):
     current_status_date = TextField()
     link_web            = TextField()
     is_alive            = TextField()
+
+class Salience(dbModel):
+    pID                 = PrimaryKeyField()
+    ID                  = ForeignKeyField(Bill)
+    summary             = BooleanField()
+    name                = TextField()
+    score               = FloatField()
+    type                = TextField()
+    section             = IntegerField()

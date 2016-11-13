@@ -41,7 +41,8 @@ data = json.loads(response.read())
 
 for x in data['objects']:
     if x['is_alive']:
-        Bill(title               = x['title'],
+        Bill(id                  = x['id'],
+             title               = x['title'],
              display_num         = x['display_number'],
              bill_type           = x['bill_type'],
              bill_type_label     = x['bill_type_label'],
