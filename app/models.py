@@ -28,6 +28,7 @@ For more information look at peewee documentation
 
 class Bill(dbModel):
     bID                 = PrimaryKeyField()
+    id                  = TextField(unique=True)
     title               = TextField()
     display_num         = TextField()
     bill_type           = TextField()

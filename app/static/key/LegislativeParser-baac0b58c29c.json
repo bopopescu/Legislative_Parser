@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "legislativeparser",
+  "private_key_id": "baac0b58c29c4e95b1562d2c276255cae2827988",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/ULY3jAKWQJZO\nG814DI6dRJ4LeZInMzuIMdMHhi+4XIgvMbDDSLWCNXp1kWmkgsoBMqCTLCG8uRZp\nNK5ZuGkN8EhP10zmBKZJr3Knj/GbxvShS46lfQ94sHwYtQT4GLhZDZugic2nLyVM\nduA/eda/KjXEIiqKSeBaeVlS7T0UVgRshdNUmuL8NnILvzY14bFp/h9+iXTj+Fhy\nzeUNkLoSXcCOzEgmvdENvpCXNTG6onR9GatC6OYME+ppKIXA5lhfRE1+3e8k1h8a\nmlP5l6ftPZasnBCGovTUCHyxBsbL67YgW4o1D1h1WusysuXaoRKlijtvQpD52ZTd\ngYxRaWuzAgMBAAECggEBAK4zNdfaOrjJUpMIqcx30pvM0QOtzLC466oVhAvD2UvL\npY0jd8o5OFy5iSnoIANVu83fZWrcslN/TLK6705upem1MoLQjgqbjTZm9MUyQlMP\nk8wSWm7BMwc326c7nKyzBZjA1UYWdBWYziOT0pi5vhoOuyo92fJVVl3LRNRHhGgw\nXKJe4XnDTd54S6toneW1+2qgliF6tlXSPR+P/QxutcYvDMhqH2j5hZENmKXQ7jrs\noF8fl9StpHcXtTI5kfZ1O4JANXeZwzrVXtwuUeWag1oSroKZ7+zFazC+CYuBJG+C\nZHj0ZOLTtNv2UncF/aPJhEeeyTExTrSn86rbnoAnb3ECgYEA+ZRHoPUQH8K/8M3V\nXy5FcaAWdS7pcf0e2vcqqPQZrGiu+1ssxnExODw8peOqK0xJ2ZyzdGJHhxWm1j+E\nKFvmmecSJd6840OyATGY23TQsv+1L6BRIFoYENim+7FWEwgNSjd2ORV4T8LV8ac3\n/MItJLdb9ClGchk9DDACIUxy8fcCgYEAxDy1KsKRiKQ7KlHThsewsu3URXZGK+T8\nOfFDlTWDkhT64zMPveSQNyIYDwOjgxkthy/H+GFDY8xtLjP+qM/qzyAbVVTrqIv7\nhJAJAO5/YPJqJ9wY45nwklw1fM4e9HAf/VWKO5mCL6BBmDd4zAlC6XAt+7OF30Y8\n+BFYflnaZSUCgYAadaHyaoi/FUKMIQZSBPHPzg0Td1nAf/lZdYLMTrS6Fo8Wjt/8\nWdvB/oDfhXdxB7F8pKRR3ml+5Mi/RhSYwsV744eFBEw6O98PSVbPTV8i2wE2f2Sa\nbXLHtnBdlrttYRknmSGrg58xtZJBAF1rKprmnZneFNInHo3eUOio5xX4mQKBgHxq\nfPZ6W6kFbxmavYDTdJ1NGmtb3IuR57SY2Z9tSVjCAnsv8YgUtLav4A8M4IuK2AnA\n6oj4qbBJeON1Rb0j7Zyan5nPeIXpEnNumrbDf3Eo4NMawZD0FcnFuofBa3DQ8gc9\nR6IX5qlpco0ehnDeYlT8sbrGjFcOAjPJU5DwSP4dAoGBAOhXQS4e5rsvKlXyeNe3\nzN6LfvC0BjB51QV5aj639vvOHvtGEWQZ5Rc/PyySIOO+ohEvoz+tcPjZrbO9CKQK\n3utAVhbVcLdajf3vrU7H++EeRifxm6vSepuZadf1hlU7sdAcA1g+jiZZV7/X00bt\n4LFEFvFR/0bvnATVKUlSyZeQ\n-----END PRIVATE KEY-----\n",
+  "client_email": "legislativeparser@appspot.gserviceaccount.com",
+  "client_id": "106621641888149649784",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/legislativeparser%40appspot.gserviceaccount.com"
+}
