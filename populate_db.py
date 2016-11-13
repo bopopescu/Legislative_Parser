@@ -1,9 +1,12 @@
-import os, sys
+import os, sys, time
 import importlib
 import datetime
 import urllib, json
 from bs4 import BeautifulSoup
 
+from app.logic.sentiment import callChain
+from app.logic.parse_sections import *
+from app.logic.bill_scrapping import *
 from app.models import *
 
 def get_tweet(url):
@@ -52,6 +55,8 @@ def get_classes (db):
         classes.append(c)
     return classes
 
+start = time.clock()
+
 mainDB.create_tables(get_classes('mainDB'))
 
 url = "https://www.govtrack.us/api/v2/bill?congress=114"
@@ -60,7 +65,7 @@ data = json.loads(response.read())
 
 for x in data['objects']:
     if x['is_alive']:
-        Bill(id                  = x['id'],
+        Bill(ID                  = x['id'],
              title               = x['title'],
              display_num         = x['display_number'],
              bill_type           = x['bill_type'],
@@ -74,4 +79,48 @@ for x in data['objects']:
         #TODO 
         #PUT THE PARSING CODE HERE
         print("Added the Bill " +x['link'])
+"""
+for bill in Bill.select(): 
+    summary = get_summaries(bill.link_web + "/summary") 
+    if summary == "N/A": 
+        pass 
+    else: 
+        for key in summary: 
+            temp = callChain(summary[key]) 
+            for ndx in range(len(temp['entities'])): 
+                for lst_key in temp['entities'][ndx]: 
+                    if lst_key == "salience": 
+                        score = float(temp['entities'][ndx][lst_key])  
+                    elif lst_key == "type": 
+                        tyype = str(temp['entities'][ndx][lst_key])  
+                    elif lst_key == "name": 
+                        name = str(temp['entities'][ndx][lst_key]) 
+                Salient(ID = bill.ID, 
+                        summary = True, 
+                        name = name, 
+                        score = score, 
+                        obj_type = tyype, 
+                        section = key  
+                        ).save()
 
+for bill in Bill.select():    
+    summary = get_summaries(bill.link_web + "/text")
+    for key in summary:
+        temp = callChain(summary[key])
+        for ndx in range(len(temp['entities'])):
+            for lst_key in temp['entities'][ndx]:
+                if lst_key == "salience":
+                    score = float(temp['entities'][ndx][lst_key])
+                elif lst_key == "type":
+                    tyype = str(temp['entities'][ndx][lst_key])
+                elif lst_key == "name":
+                    name = str(temp['entities'][ndx][lst_key])
+            Salient(ID = bill.ID,
+                    summary = False,
+                    name = name,
+                    score = score,
+                    obj_type = tyype,
+                    section = key
+                    ).save() 
+"""
+print (time.clock() - start)    
