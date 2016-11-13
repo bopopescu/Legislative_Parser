@@ -79,13 +79,20 @@
 	</header>
 
   <div class="col-xs-12">
+    <br />
 		<h1 class="text-center col-xs-10 col-xs-offset-1"> {{bill.title}} </h1>
-    {{colors}}
 			{% for section in sections %}
       <div class="row">
-				<div class="col-xs-6">
-					<h2>Section {{section}}</h2>
-          <p class="{{colors[section]}}">{{sections[section]}}</p>
+				<div class="col-xs-12">
+					<h2 class="text-center">Section {{section}}</h2>
+          {% if colors[section] %} 
+          <p class="{{colors[section]}} col-xs-10 col-xs-offset-1">{{sections[section]}}</p>
+          {% endif %}
+          {% if colors[section] is not defined %} 
+          <p class="alert alert-info col-xs-10 col-xs-offset-1">{{sections[section]}}</p>
+          {% endif %}
+
+
 				</div>
 		</div>
 			{% endfor %}
