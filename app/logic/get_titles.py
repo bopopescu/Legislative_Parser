@@ -7,3 +7,5 @@ for x in data['objects']:
     if x['is_alive']:
         print x['title_without_number']
         print x['id']
+        print x['congress']
+        print x['bill_type_label']

@@ -4,3 +4,4 @@ nltk
 Flask
 peewee
 pyyaml
+BeautifulSoup4
