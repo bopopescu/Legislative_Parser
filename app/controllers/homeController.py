@@ -6,7 +6,7 @@ from app.allImports import *
 from app.logic.sentiment import callChain
 from app.logic.parse_sections import get_sections
 from app.logic.bill_scrapping import get_summaries
-
+from app.logic.summarize import summarize
 
 
 from flask import render_template
