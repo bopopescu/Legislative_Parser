@@ -12,3 +12,4 @@ databases:
 models:
   mainDB:
     - Bill
+    - Salience

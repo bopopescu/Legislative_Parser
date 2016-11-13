@@ -37,3 +37,12 @@ class Bill(dbModel):
     current_status_date = TextField()
     link_web            = TextField()
     is_alive            = TextField()
+
+class Salience(dbModel):
+    pID                 = PrimaryKeyField()
+    ID                  = ForeignKeyField(Bill)
+    summary             = BooleanKeyField()
+    name                = TextField()
+    score               = FloatField()
+    type                = TextFied()
+    section             = IntegerField()
