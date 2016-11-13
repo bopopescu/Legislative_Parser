@@ -19,5 +19,5 @@ def list_bills():
 
 @app.route('/view/<bid>/', methods=["GET"])
 def view_bill(bid):
-    bill = Bill.select().where(Bill.id == bid).get()
-    return render_template('homeView.html', bill=bill)
+    bill = Bill.select().where(Bill.bID == bid).get()
+    return render_template('display.html', bill=bill)
