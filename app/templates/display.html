@@ -79,12 +79,12 @@
 	</header>
 
   <div class="col-xs-12">
-
+		<h1 class="text-center col-xs-10 col-xs-offset-1"> {{bill.title}} </h1>
 			{% for section in sections %}
-			<div class="row">
+			<div class="row {{sections[section][0]}}">
 				<div class="col-xs-6">
 					<h2>Section {{section}}</h2>
-					<p>{{sections[section]}}</p>
+					<p>{{sections[section][1]}}</p>
 				</div>
 				<div class="col-xs-6">
 					{{summaries[section]}}
@@ -92,16 +92,8 @@
 		</div>
 			{% endfor %}
 
-    <h1 class="text-center col-xs-10 col-xs-offset-1"> {{bill.title}} </h1>
-    <p class="alert alert-danger col-xs-10 col-xs-offset-1">DJDJDKJFLSJDKFJKLSDJFLKJSKLDFJKLSJDLKFJSLKDJFLKJSDLKFJLSKDJFKLSJDLKFJLSKDJFLSD
-      FJSLKDFJLKSJDFLKJSD
-      FJSLDKJFLSKJDLFKJSLKDJFLKSJDLFSJD
-      FJLSDKJFLSKJDFLKJSLDKJFLKSDJFLKJSDLKFJLKSDJFLKSJDLKFJSLD
-      FJSLDKJFLSKDJFLKJSDLFKJSDLKFJLSDJFLSD
-      FJLSDJFLKSDJFLKJSDLFJLSD
-      FJSLDKFJLSKDJFLKSJDF
-      SJDLFJSDLKFJS
-      DFLKJLKJDFS
+
+    <p class="alert alert-danger col-xs-10 col-xs-offset-1">
     </p>"
   </div>
 

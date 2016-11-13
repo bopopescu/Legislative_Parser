@@ -11,12 +11,12 @@ from app.logic.bill_scrapping import get_summaries
 
 from flask import render_template
 
-@app.route('/home/', methods=["GET"])
+@app.route('/', methods=["GET"])
 def home():
     master = Bill.select().join(Salient, on=(Bill.ID == Salient.ID_id))
-    ##Kye left off here after making the join statement 
+    ##Kye left off here after making the join statement
     for i in master:
-        print i  
+        print i
     bills = Bill.select().where(Bill.is_alive == "True")
     return render_template('homeView.html', numbills = len(bills), master = master)
 
