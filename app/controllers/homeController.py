@@ -1,6 +1,6 @@
 #Home Page Controleler
 
-from app.models import Bill
+from app.models import *
 from app.allImports import *
 
 from app.logic.sentiment import callChain
@@ -13,8 +13,12 @@ from flask import render_template
 
 @app.route('/home/', methods=["GET"])
 def home():
+    master = Bill.select().join(Salient, on=(Bill.ID == Salient.ID_id))
+    ##Kye left off here after making the join statement 
+    for i in master:
+        print i  
     bills = Bill.select().where(Bill.is_alive == "True")
-    return render_template('homeView.html', numbills = len(bills))
+    return render_template('homeView.html', numbills = len(bills), master = master)
 
 @app.route('/list/', methods=["GET"])
 def list_bills():
