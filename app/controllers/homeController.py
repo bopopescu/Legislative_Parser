@@ -15,10 +15,10 @@ from flask import render_template
 
 @app.route('/', methods=["GET"])
 def home():
-    master = Bill.select().join(Salient, on=(Bill.ID == Salient.ID_id))
+    main = Bill.select().join(Salient, on=(Bill.ID == Salient.ID_id))
     ##Kye left off here after making the join statement
     bills = Bill.select().where(Bill.is_alive == "True")
-    return render_template('homeView.html', numbills = len(bills), master = master)
+    return render_template('homeView.html', numbills = len(bills), main = main)
 
 @app.route('/list/', methods=["GET"])
 def list_bills():
